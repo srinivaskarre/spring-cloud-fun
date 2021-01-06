@@ -18,19 +18,9 @@ public class SpringCloudFunApplication {
 	}
 
 	@Bean
-	public Function<String, GatewayResponse> computePayment(){
+	public Function<String, GatewayResponse> computePayment() {
 		return input -> new GatewayResponse(input, 200, Collections.singletonMap("X-token", "abcd"), false);
-	 }
-
-	 @Bean
-	public Consumer<String> consumer(){
-		return input -> System.out.println(input);
-	 }
-
-	 @Bean
-	public Supplier<String> supplier(){
-		return ()-> "Hello from skarre labmda";
-	 }
+	}
 }
 
 
